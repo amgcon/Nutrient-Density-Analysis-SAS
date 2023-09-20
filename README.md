@@ -151,7 +151,32 @@ from Amir.dflcfood full join Amir.dfhpfood30
 on dflcfood.dataBNum = dfhpfood30.dataBNum; quit;
 ```
 
-### VISULIZATION
+### VISUALIZATION
+#### The main techniques used to visualize are:
+1. Frequency plots / Frequency tables
+```sas
+	/* Low carb High fiber, top 10 sources freq table freq plot */
+	proc freq data= Amir.lchfother ORDER=data;   /* order by data and use WEIGHT statement for count */
+	tables TopCatlchf / plots=FreqPlot(scale=percent);
+	weight Count;                  
+	run;	
+```
+2. Gchart: vbar, hbar.
+```sas
+	/* vertical chart for high testosterone boosting foods */
+	proc gchart data = Amir.htother;
+	vbar topCatht / discrete inside = percent sumvar = count;
+	run; quit;
+``` 
+3. Gchart: Pie 
+```sas
+	/* pie chart for calcium */
+	proc gchart data = Amir.calother;
+	pie topCatcal / discrete percent = inside sumvar = count explode='Chocolate milk';
+	run; quit;
+```
+
+#### Below are the corresponding visualizations for the problem statements: 
 What foods are the highest in carbohydrates?
 What foods are highest in protein?
 What foods are the highest in saturated fats?
