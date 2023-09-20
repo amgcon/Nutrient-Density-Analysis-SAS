@@ -1,5 +1,5 @@
 # ANALYSIS OF THE MOST NUTRIENT DENSE FOODS
-![](bannersas.png)
+![](visImages/bannersas.png)
 
 ### INTRODUCTION
 This SAS coded project analyzes the most nutrient dense foods by category for specific health goals. This analysis aims to simplify the consumption of foods most dense in Macronutrients (Carbs, Fats, Protein) and high in Micronutrients. This analysis will provide insight on dietary information which allows readers to make data driven decisions to efficiently fulfill specific dietary requirements and goals. 
@@ -29,6 +29,8 @@ This SAS coded project analyzes the most nutrient dense foods by category for sp
   
 ### THE DATA
 This data was obtained from kaggle [link](https://www.kaggle.com/datasets/mexwell/food-vitamins-minerals-macronutrient) by using the United States Department of Agriculture’s Food Composition Database.
+
+This data has over 7000 food records, and 29 nutrient rows.
 
 ### DATA MANIPULATION
 - Clean (no duplicates, outliers, inconsistent data, etc.) and label the categories
@@ -179,13 +181,56 @@ on dflcfood.dataBNum = dfhpfood30.dataBNum; quit;
 ```
 
 #### Below are the corresponding visualizations for the problem statements: 
-What foods are the highest in carbohydrates?
-What foods are highest in protein?
-What foods are the highest in saturated fats?
-What foods have the best electrolyte content? (Based on Sodium, Potassium, Calcium)
-Which foods have the most b-vitamins and protein content? (Energy production.)
-What are the top 100 low carbohydrate options with high fiber?
-Which foods are best to increase testosterone? (Vitamin D, Cholesterol, selenium, B vitamins, protein)
-Highest protein, fat and a healthy range of carbs?
-What are good low carb and low fat foods?
-What are good low carb and high protein foods?
+**Highest Carbohydrate categories**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/hci1.PNG) | ![](visImages/hci2.PNG)
+
+**Highest Protein categories**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/hpi1.PNG) | ![](visImages/hpi2.PNG)
+
+**Highest Saturated fats categories**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/hsfi1.PNG) | ![](visImages/hsfi2.PNG)
+
+**Highest Electrolyte content categories**
+Sodium                      |  Calcium                 | Potassium
+:-------------------------:|:-------------------------:|:-------------------:
+![](visImages/elec1.PNG) | ![](visImages/elec2.PNG) | ![](visImages/elec3.PNG) 
+
+**Highest B-Vitamin and Protein categories**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/bpi1.PNG) | ![](visImages/bpi2.PNG)
+
+**Low Carbs and High fiber content**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/lchfi1.PNG) | ![](visImages/lchfi2.PNG)
+
+**Highest Testosterone boosting categories**
+
+![](visImages/testfoods1.PNG)
+
+**Healthiest categories of Protein, Fats, and Carbohydrates**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/pfci1.PNG) | ![](visImages/pfci2.PNG)
+
+**Lowest Carbohydrates and Lowest Fat categories**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/lclfi1.PNG) | ![](visImages/lclfi2.PNG)
+
+**Lowest Carbohydrate and high Protein categories**
+Frequency procedure        |  Distribution
+:-------------------------:|:-------------------------:
+![](visImages/lchpi1.PNG) | ![](visImages/lchpi2.PNG)
+
+### STATISTICAL ANALYSIS
+
+
+
