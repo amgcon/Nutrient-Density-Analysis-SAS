@@ -186,51 +186,51 @@ on dflcfood.dataBNum = dfhpfood30.dataBNum; quit;
 ```
 
 #### Below are the corresponding visualizations for the problem statements: 
-**Highest Carbohydrate categories**
+**1. Highest Carbohydrate categories**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/hci1.PNG) | ![](visImages/hci2.PNG)
 
-**Highest Protein categories**
+**2. Highest Protein categories**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/hpi1.PNG) | ![](visImages/hpi2.PNG)
 
-**Highest Saturated fats categories**
+**3. Highest Saturated fats categories**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/hsfi1.PNG) | ![](visImages/hsfi2.PNG)
 
-**Highest Electrolyte content categories**
+**4. Highest Electrolyte content categories**
 Sodium                      |  Calcium                 | Potassium
 :-------------------------:|:-------------------------:|:-------------------:
 ![](visImages/elec1.PNG) | ![](visImages/elec2.PNG) | ![](visImages/elec3.PNG) 
 
-**Highest B-Vitamin and Protein categories**
+**5. Highest B-Vitamin and Protein categories**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/bpi1.PNG) | ![](visImages/bpi2.PNG)
 
-**Low Carbs and High fiber content**
+**6. Low Carbs and High fiber content**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/lchfi1.PNG) | ![](visImages/lchfi2.PNG)
 
-**Highest Testosterone boosting categories**
+**7. Highest Testosterone boosting categories**
 
 ![](visImages/testfoods1.PNG)
 
-**Healthiest categories of Protein, Fats, and Carbohydrates**
+**8. Healthiest categories of Protein, Fats, and Carbohydrates**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/pfci1.PNG) | ![](visImages/pfci2.PNG)
 
-**Lowest Carbohydrates and Lowest Fat categories**
+**9. Lowest Carbohydrates and Lowest Fat categories**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/lclfi1.PNG) | ![](visImages/lclfi2.PNG)
 
-**Lowest Carbohydrate and high Protein categories**
+**10. Lowest Carbohydrate and high Protein categories**
 Frequency procedure        |  Distribution
 :-------------------------:|:-------------------------:
 ![](visImages/lchpi1.PNG) | ![](visImages/lchpi2.PNG)
@@ -293,4 +293,56 @@ run;
 ```
 
 
+#### Problem statement analysis
+
+**1. Correlation between carbs and sugar content**
+
+Using Simple Random Sampling, a table of 1000 instances were created from the dataset. This was used to determine the correlation value between carbohydrates and sugar. 
+
+**Paired sample test**
+
+**H0:** There is no significant mean difference between 2 variables from 0 
+**H1:** There is a significant mean difference between 2 variables from 0 
+
+In the paired sample test the PR value of: <.0001 (less than 0.05) - therefore this is contributing highly and the null hypothesis (H0) is rejected.
+
+**Correlation value:** 0.71841 (between 0.5 to 1) is a strong positive correlation between sugar and carbohydrates.
+
+**2. Top foods to support a healthy breakdown of macronutrient consumption? (i.e. Healthy carb intake, sufficient fat, and high protein)**
+
+According to American Dietary guidelines - In general, most adults should target their diets to comprise of 45-65% Carbohydrates, 10-35% Protein and 20-35% Fat.
+The current data lists the top 200 sources of each macronutrient by category that is > 20g of protein, > 20g of total Fats, and between > 30 and < 60g of carbohydrates. These tables contain good options to fulfill these goals. This will allow for a guide on what categories fulfill a person's specific goal.
+
+The Mean, Median, and Std Dev of the top 200 sources of protein, fat and healthy carbs were calculated based on the dietary guidelines to ensure the values were within range. The list was combined into a list of 600 foods and then the univariate was calculated.
+This list of foods will have an average of:
+Macros        |  Average grams (g)
+:------:|:------:
+Carbs | 25.19 
+Protein | 16.25 
+Fats | 23.73
+
+**3. Electrolytes correlating with Macronutrients**
+Simple statistics        |  Correlation value
+:-------------------------:|:-------------------------:
+![](statanal/mci1.PNG) | ![](statanal/mci2.PNG)
+
+The results of the correlation test with: protein, carbohydrates, fats, sodium, potassium and calcium resulted in:
+
+**Sodium-Protein:** (0.41090) - weak positive correlation
+
+**Potassium-Protein:** (0.46165) - weak positive correlation
+
+**Calcium-Carbohydrate:** (0.17877) - weak positive correlation
+
+This entails that the best macronutrient to consume and abundance of potassium, and sodium are from protein. The best macronutrient to consume an abundance of calcium would be from carbohydrates.
+
+
+Sodium-Protein      |  Potassium-Protein         | Calcium-Carbohydrate
+:-------------------------:|:-------------------------:|:-------------------------:
+![](statanal/lrm1.PNG) | ![](statanal/lrm3.PNG)     | ![](statanal/lrm2.PNG)
+
+The results from the linear regression models verify that these ftest values (all <.0001) are contributing highly.
+
+
+### CONCLUSION
 
