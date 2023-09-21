@@ -30,7 +30,12 @@ This SAS coded project analyzes the most nutrient dense foods by category for sp
 ### THE DATA
 This data was obtained from kaggle [link](https://www.kaggle.com/datasets/mexwell/food-vitamins-minerals-macronutrient) by using the United States Department of Agriculture’s Food Composition Database.
 
-This data has over 7000 food records, and 29 nutrient rows.
+This data has over 7000 food records, and 29 nutrient rows. It was imported as an Excel (.xlsx) file into SAS then converted into a (.sas7bdat) file. A backup was created.
+```sas
+	Data Amir.foodFilebk;
+	set Amir.foodFile;
+	run;
+```
 
 ### DATA MANIPULATION
 - Clean (no duplicates, outliers, inconsistent data, etc.) and label the categories
@@ -231,6 +236,61 @@ Frequency procedure        |  Distribution
 ![](visImages/lchpi1.PNG) | ![](visImages/lchpi2.PNG)
 
 ### STATISTICAL ANALYSIS
+**The main techniques used for statistical analysis are:**
+1. PROC MEANS - mean, median, standard deviation
+```sas
+/* Mean Median Std Dev of the top 200 high protein, fat and healthy carbs*/
+proc means data = Amir.hcfood200 order=freq mean median stddev;
+var carbs;
+class category;
+run;
+```
+   
+2. PROC UNIVARIATE
+```sas
+/* Univariate of top 600 foods based on protein fat and carbs*/
+proc univariate data=Amir.mergehfcp;
+var carbs protein totalFat;
+run;
+```
+3. Simple Random Sampling SRS (1000 observations)
+```sas
+/* Simple random sampling*/
+proc surveyselect data = Amir.foodfile method=srs n=1000 out=Amir.foodSample;
+run;
+```
+4. Paired sample test
+```sas
+/* Paired sample test */
+/* H0: There is no significant mean difference between 2 variables from 0 */
+/* H1: There is a significant mean difference between 2 variables from 0 */
+proc ttest data = Amir.foodsample;
+paired carbs*sugartot;
+run;
+/* PR: <.0001 (less than 0.05)- therefore this is contributing highly and the null hypothesis is rejected */
+```
+5. Correlation values
+```sas
+proc corr data=Amir.foodsample;
+var carbs sugartot;
+run;
+/* Correlation value: 0.71841 is a strong positive correlation between sugar and carbs */
+```
+6. Linear Regression model
+```sas
+/* Linear regression Model */
+proc reg data = Amir.foodsample;
+	model protein = sodium;
+run; quit;
+/* ftest: <.0001 - contributing highly */
+```
+7. ANOVA
+```sas
+proc Anova data = Amir.foodsample;
+class category;
+model magnesium=category;
+run;
+```
 
 
 
