@@ -305,7 +305,7 @@ Using Simple Random Sampling, a table of 1000 instances were created from the da
 
 In the paired sample test the PR value of: <.0001 (less than 0.05) - therefore this is contributing highly and the null hypothesis (H0) is rejected.
 
-**Correlation value:** 0.71841 (between 0.5 to 1) is a strong positive correlation between sugar and carbohydrates.
+**Correlation value:** 0.71 (between 0.5 to 1) is a strong positive correlation between sugar and carbohydrates.
 
 **2. Top foods to support a healthy breakdown of macronutrient consumption? (i.e. Healthy carb intake, sufficient fat, and high protein)**
 
@@ -327,11 +327,11 @@ Simple statistics        |  Correlation value
 
 The results of the correlation test with: protein, carbohydrates, fats, sodium, potassium and calcium resulted in:
 
-**Sodium-Protein:** (0.41090) - weak positive correlation
+**Sodium-Protein:** (0.41) - weak positive correlation
 
-**Potassium-Protein:** (0.46165) - weak positive correlation
+**Potassium-Protein:** (0.46) - weak positive correlation
 
-**Calcium-Carbohydrate:** (0.17877) - weak positive correlation
+**Calcium-Carbohydrate:** (0.18) - weak positive correlation
 
 This entails that the best macronutrient to consume and abundance of potassium, and sodium are from protein. The best macronutrient to consume an abundance of calcium would be from carbohydrates.
 
@@ -363,9 +363,9 @@ The statistical analysis remains, and the data can be interpreted to make health
 Based on correlation values and the paired sample test, the data suggests that there is a strong correlation between sugar and carb content. This entails that diets or goals following a lower glycemic index protocol must include low carbohydrate foods, and vice versa.
 
 The data has also been manipulated to output a table with the top foods with a healthy breakdown or macronutrients with an average of: 
-- Carbs : 25.19 
-- Protein : 16.25 
-- Fats : 23.73
+- Carbs : 25.19 g
+- Protein : 16.25 g
+- Fats : 23.73 g
 
 These foods are within a healthy range according to American food guidelines. Readers can use this table to make food related decisions. 
 
