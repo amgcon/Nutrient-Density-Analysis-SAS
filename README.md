@@ -345,3 +345,40 @@ The results from the linear regression models verify that these ftest values (al
 
 ### CONCLUSION
 
+In conclusion, the data has been simplified visually to allow readers to make data driven decisions to obtain and fulfill specific dietary goals. The analysis of the top sources of nutrient dense foods provides an easy understanding of macronutrient and micronutrient content. The following has been addressed in graphs:
+
+- What foods are the highest in carbohydrates?
+- What foods are highest in protein?
+- What foods are the highest in saturated fats?
+- What foods have the best electrolyte content? (Based on Sodium, Potassium, Calcium)
+- Which foods have the most b-vitamins and protein content? (Energy production.)
+- What are the top 100 low carbohydrate options with high fiber?
+- Which foods are best to increase testosterone? (Vitamin D, Cholesterol, selenium, B vitamins, protein)
+- Highest protein, fat and a healthy range of carbs?
+- What are good low carb and low fat foods?
+- What are good low carb and high protein foods?
+
+The statistical analysis remains, and the data can be interpreted to make healthier food related decisions. 
+
+Based on correlation values and the paired sample test, the data suggests that there is a strong correlation between sugar and carb content. This entails that diets or goals following a lower glycemic index protocol must include low carbohydrate foods, and vice versa.
+
+The data has also been manipulated to output a table with the top foods with a healthy breakdown or macronutrients with an average of: 
+- Carbs : 25.19 
+- Protein : 16.25 
+- Fats : 23.73
+
+These foods are within a healthy range according to American food guidelines. Readers can use this table to make food related decisions. 
+
+
+In terms of consuming enough electrolytes, the data has been simplified to show macronutrients which correlate the most with specific electrolytes. A meal plan which includes optimal amounts of these macronutrients will also help to fulfil electrolyte targets.
+To consume enough:
+- Sodium: include protein rich foods (salt for flavour)
+- Potassium: include protein rich foods
+- Calcium: include enough carbohydrates
+
+Therefore, the problem statement has been addressed. 
+
+### Thank you for reading!
+
+
+
