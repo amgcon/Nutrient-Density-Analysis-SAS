@@ -187,53 +187,35 @@ on dflcfood.dataBNum = dfhpfood30.dataBNum; quit;
 
 #### Below are the corresponding visualizations for the problem statements: 
 **1. Highest Carbohydrate categories**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/hci1.PNG) | ![](visImages/hci2.PNG)
+![](visImages/hci1.PNG)
 
 **2. Highest Protein categories**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/hpi1.PNG) | ![](visImages/hpi2.PNG)
+![](visImages/hpi1.PNG) 
 
 **3. Highest Saturated fats categories**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/hsfi1.PNG) | ![](visImages/hsfi2.PNG)
+![](visImages/hsfi1.PNG)
 
 **4. Highest Electrolyte content categories**
-Sodium                      |  Calcium                 | Potassium
-:-------------------------:|:-------------------------:|:-------------------:
-![](visImages/elec1.PNG) | ![](visImages/elec2.PNG) | ![](visImages/elec3.PNG) 
+![](visImages/elec1.PNG)
 
 **5. Highest B-Vitamin and Protein categories**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/bpi1.PNG) | ![](visImages/bpi2.PNG)
+![](visImages/bpi1.PNG)
 
 **6. Low Carbs and High fiber content**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/lchfi1.PNG) | ![](visImages/lchfi2.PNG)
+![](visImages/lchfi1.PNG)
 
 **7. Highest Testosterone boosting categories**
 
 ![](visImages/testfoods1.PNG)
 
 **8. Healthiest categories of Protein, Fats, and Carbohydrates**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/pfci1.PNG) | ![](visImages/pfci2.PNG)
+![](visImages/pfci1.PNG)
 
 **9. Lowest Carbohydrates and Lowest Fat categories**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/lclfi1.PNG) | ![](visImages/lclfi2.PNG)
+![](visImages/lclfi1.PNG)
 
 **10. Lowest Carbohydrate and high Protein categories**
-Frequency procedure        |  Distribution
-:-------------------------:|:-------------------------:
-![](visImages/lchpi1.PNG) | ![](visImages/lchpi2.PNG)
+![](visImages/lchpi1.PNG)
 
 ### STATISTICAL ANALYSIS
 **The main techniques used for statistical analysis are:**
