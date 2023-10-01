@@ -1,6 +1,5 @@
 # ANALYSIS OF THE MOST NUTRIENT DENSE FOODS
 ![](visImages/bannersas.png)
-
 ### INTRODUCTION
 This SAS coded project analyzes the most nutrient dense foods by category for specific health goals. This analysis aims to simplify the consumption of foods most dense in Macronutrients (Carbs, Fats, Protein) and high in Micronutrients. This analysis will provide insight on dietary information which allows readers to make data driven decisions to efficiently fulfill specific dietary requirements and goals. 
 ### PROBLEM STATEMENT
@@ -100,23 +99,29 @@ proc sql outobs=25;
      order by calcium desc; /*sort highest to lowest calcium value then take top 25*/
 quit;
 ```
-- Incorporate frequency tables for easy analysis of top sources
+- Incorporate proc means for easy analysis of top food categories
 ```sas
-/*What category of foods are the highest in carbs? */
+/* What category of foods are the highest in carbs? */
 
-/*check the frequency of categories*/ 
-proc freq data=Amir.hcfood ORDER=FREQ noprint;
-tables &vcat / out=Amir.hcfoodfreq; /*macro category*/
+/* Calculate the mean for the food categories, high frequency foods will be averaged */
+proc means data=Amir.hcfood noprint nway ;
+var carbs;
+class &vcat;
+output out=Amir.hcmean mean=carbmean; /* output file with mean variables based on food categories */
 run;
 
-/*create other category for any sources not in the top 10*/
-data Amir.hcother;
-set Amir.hcfoodfreq;
-label topCat = 'Top 10 High Carb Categories & Other';
-topCat = &vcat;
-if _n_ > &top10 then /*macro value of 10*/
-	topCat='Other';
+/* Sort the data for the highest carb (or lowest) nutrient content first */
+proc sort data=Amir.hcmean;
+by descending carbmean;
 run;
+
+/* Seperate table for the top 25 data (nutrient sources) to be displayed*/
+data Amir.tophcmean;
+set Amir.hcmean;
+if _n_ <= &top25;
+run;
+
+/*This data is then graphed based on the top sources table - as directed by the problem statement */
 ```
 - Integrate join techniques to specify nutrient densities
 ```sas
@@ -162,7 +167,26 @@ on dflcfood.dataBNum = dfhpfood30.dataBNum; quit;
 
 ### VISUALIZATION
 #### The main techniques used to visualize are:
-1. Frequency plots / Frequency tables
+1. Gchart: vbar, hbar.
+```sas
+	/* Hbar for low carb, low fat foods */
+	/*Create graph to display the results*/
+	title'Low Carb & Low Fat categories';
+	proc gchart data=Amir.toplclfmean; 
+	hbar &vcat / discrete type=sum sumvar=totalFat_mean nostats;
+	run;
+	quit;
+``` 
+2. Gchart: Pie 
+```sas
+	/* pie chart for calcium */
+	title 'High Calcium categories';
+	proc gchart data = Amir.topcalmean;
+	pie &vcat / discrete percent = inside sumvar = calmean;
+	format calmean 7.0;
+	run; quit;
+```
+3. Frequency plots / Frequency tables
 ```sas
 	/* Low carb High fiber, top 10 sources freq table freq plot */
 	proc freq data= Amir.lchfother ORDER=data;   /* order by data and use WEIGHT statement for count */
@@ -170,52 +194,45 @@ on dflcfood.dataBNum = dfhpfood30.dataBNum; quit;
 	weight Count;                  
 	run;	
 ```
-2. Gchart: vbar, hbar.
-```sas
-	/* vertical chart for high testosterone boosting foods */
-	proc gchart data = Amir.htother;
-	vbar topCatht / discrete inside = percent sumvar = count;
-	run; quit;
-``` 
-3. Gchart: Pie 
-```sas
-	/* pie chart for calcium */
-	proc gchart data = Amir.calother;
-	pie topCatcal / discrete percent = inside sumvar = count explode='Chocolate milk';
-	run; quit;
-```
 
 #### Below are the corresponding visualizations for the problem statements: 
 **1. Highest Carbohydrate categories**
-![](visImages/hci1.PNG)
+
+![](visImages/i1.PNG)
 
 **2. Highest Protein categories**
-![](visImages/hpi1.PNG) 
+
+![](visImages/i2.PNG) 
 
 **3. Highest Saturated fats categories**
-![](visImages/hsfi1.PNG)
+
+![](visImages/i3.PNG)
 
 **4. Highest Electrolyte content categories**
-![](visImages/elec1.PNG)
+Sodium       |     Potassium     |      Calcium
+:------------:|:-----------------:|:---------:
+![](visImages/i4s.PNG) | ![](visImages/i4p.PNG) | ![](visImages/i4c.PNG)
 
 **5. Highest B-Vitamin and Protein categories**
-![](visImages/bpi1.PNG)
+
+![](visImages/i5.PNG)
 
 **6. Low Carbs and High fiber content**
-![](visImages/lchfi1.PNG)
+
+![](visImages/i6.PNG)
 
 **7. Highest Testosterone boosting categories**
 
-![](visImages/testfoods1.PNG)
+![](visImages/i7.PNG)
 
 **8. Healthiest categories of Protein, Fats, and Carbohydrates**
-![](visImages/pfci1.PNG)
+![](visImages/i8.PNG)
 
 **9. Lowest Carbohydrates and Lowest Fat categories**
-![](visImages/lclfi1.PNG)
+![](visImages/i9.PNG)
 
 **10. Lowest Carbohydrate and high Protein categories**
-![](visImages/lchpi1.PNG)
+![](visImages/i10.PNG)
 
 ### STATISTICAL ANALYSIS
 **The main techniques used for statistical analysis are:**
